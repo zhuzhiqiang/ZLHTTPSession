@@ -9,6 +9,8 @@
 #import "HttpSession.h"
 #import "ZLHttpSession+CredentialAuth.h"
 
+#define SERVER_URL @"192.168.40.240"
+
 @implementation HttpSession
 
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler {
@@ -41,11 +43,10 @@
     SecTrustRef trus = space.serverTrust;
     NSLog(@"trus:%@",trus);
     
-    
-    if([host isEqualToString:@"192.168.1.122"] && receivesCredentialSecurely) {
+    if([host isEqualToString:SERVER_URL] && receivesCredentialSecurely) {
         // 认证方法：客户端认证
         if ([authenticationMethod isEqualToString:@"NSURLAuthenticationMethodClientCertificate"] ) {
-            NSString *p12Path = [[NSBundle mainBundle] pathForResource:@"client" ofType:@"p12"];
+            NSString *p12Path = [[NSBundle mainBundle] pathForResource:@"client_side" ofType:@"p12"];
             NSData * p12Data = [NSData dataWithContentsOfFile:p12Path];
             
             [self authClientCerData:p12Data cerPass:@"123456" space:space success:^(NSURLCredential *credential) {
@@ -55,13 +56,10 @@
                 NSLog(@"errorMsg = %@",errorMsg);
                 completionHandler(NSURLSessionAuthChallengeCancelAuthenticationChallenge,nil);
             }];
-            
-            
-            
             //验证服务器证书------------------------------------------
         } else if([authenticationMethod isEqualToString:@"NSURLAuthenticationMethodServerTrust"]) {
             
-            NSString *path = [[NSBundle mainBundle] pathForResource:@"server_client.cer" ofType:nil];
+            NSString *path = [[NSBundle mainBundle] pathForResource:@"server_side.cer" ofType:nil];
             NSData *cerData = [[NSData alloc] initWithContentsOfFile:path];
             [self authServerCerData:cerData space:space success:^{
                 // 验证成功

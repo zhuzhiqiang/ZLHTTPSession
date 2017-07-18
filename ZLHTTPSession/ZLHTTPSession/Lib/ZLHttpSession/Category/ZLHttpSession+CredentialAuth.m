@@ -16,7 +16,6 @@
         if (failure) {
             failure([[NSString alloc] initWithFormat:@"服务器认证方法不为'NSURLAuthenticationMethodServerTrust',authenticationMethod='%@'",space.authenticationMethod]);
         }
-        
         return;
     }
     SecTrustRef serverTrust = space.serverTrust;
@@ -24,7 +23,6 @@
         if (failure) {
             failure(@"space.serverTurst == nil");
         }
-        
         return;
     }
     
@@ -42,7 +40,6 @@
         if (failure) {
             failure(@"不能读取证书信息,请检查证书名称");
         }
-        
         return;
     }
     
@@ -69,7 +66,7 @@
     }
     // result返回结果,是否信任
     BOOL allowConnect = ((result == kSecTrustResultUnspecified) || (result == kSecTrustResultProceed));
-    if(!allowConnect) {
+    if(allowConnect) {
         if (failure) {
             failure(@"不是信任的连接");
         }
@@ -80,7 +77,6 @@
     if (success) {
         success();
     }
-    
     
 }
 

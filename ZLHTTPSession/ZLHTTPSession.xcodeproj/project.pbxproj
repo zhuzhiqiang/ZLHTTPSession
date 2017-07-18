@@ -40,6 +40,8 @@
 		180B02311E8523FF007F524C /* ShowErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180B021B1E8523FF007F524C /* ShowErrorView.xib */; };
 		180B02351E85243C007F524C /* client.p12 in Resources */ = {isa = PBXBuildFile; fileRef = 180B02331E85243C007F524C /* client.p12 */; };
 		180B02361E85243C007F524C /* server_client.cer in Resources */ = {isa = PBXBuildFile; fileRef = 180B02341E85243C007F524C /* server_client.cer */; };
+		E94D747D1F1DA1E300480E94 /* client_side.p12 in Resources */ = {isa = PBXBuildFile; fileRef = E94D747B1F1D9BFE00480E94 /* client_side.p12 */; };
+		E94D747E1F1DA1E700480E94 /* server_side.cer in Resources */ = {isa = PBXBuildFile; fileRef = E94D747C1F1D9BFE00480E94 /* server_side.cer */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +115,8 @@
 		180B021B1E8523FF007F524C /* ShowErrorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowErrorView.xib; sourceTree = "<group>"; };
 		180B02331E85243C007F524C /* client.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = client.p12; sourceTree = "<group>"; };
 		180B02341E85243C007F524C /* server_client.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = server_client.cer; sourceTree = "<group>"; };
+		E94D747B1F1D9BFE00480E94 /* client_side.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = client_side.p12; sourceTree = "<group>"; };
+		E94D747C1F1D9BFE00480E94 /* server_side.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = server_side.cer; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,6 +309,8 @@
 		180B02321E85243C007F524C /* certificate */ = {
 			isa = PBXGroup;
 			children = (
+				E94D747B1F1D9BFE00480E94 /* client_side.p12 */,
+				E94D747C1F1D9BFE00480E94 /* server_side.cer */,
 				180B02331E85243C007F524C /* client.p12 */,
 				180B02341E85243C007F524C /* server_client.cer */,
 			);
@@ -396,6 +402,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E94D747E1F1DA1E700480E94 /* server_side.cer in Resources */,
+				E94D747D1F1DA1E300480E94 /* client_side.p12 in Resources */,
 				180B02311E8523FF007F524C /* ShowErrorView.xib in Resources */,
 				180B016C1E84E71D007F524C /* LaunchScreen.storyboard in Resources */,
 				180B02361E85243C007F524C /* server_client.cer in Resources */,
